@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Select;
 
 public class CreatePerson {
     private static WebDriver driver;
@@ -24,19 +23,13 @@ public class CreatePerson {
         options.addArguments("--disable-popup-blocking");
         driver = new ChromeDriver(options);
 
-
         driver.manage().window().maximize();//разворачиваем окно
         driver.get(LOGIN_PAGE);
 
         //здесь слипы на ожидания метять не стал
         //Заполняем необходимые поля данными
+        login();
 
-        WebElement loginTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput\"]"));
-        loginTextInput.sendKeys(USER_LOGIN);
-        WebElement passTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput2\"]"));
-        passTextInput.sendKeys(USER_PASSWORD);
-        WebElement loginButton = driver.findElement(By.xpath(".//button[@name='_submit']"));
-        loginButton.click();
         driver.get("https://crm.geekbrains.space/contact/");
         WebElement buttonCreatePerson = driver.findElement(By.xpath(".//a[@title=\"Создать контактное лицо\"]"));
         buttonCreatePerson.click();
@@ -57,9 +50,17 @@ public class CreatePerson {
         position.sendKeys("Tester");
         driver.findElement(By.xpath(".//button[@class=\"btn btn-success action-button\"]")).click();
 
-        driver.quit();//закрываем браузер
+//        driver.quit();//закрываем браузер
 
-
+    }
+    private static void login(){
+        driver.get(LOGIN_PAGE);
+        WebElement loginTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput\"]"));
+        loginTextInput.sendKeys(USER_LOGIN);
+        WebElement passTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput2\"]"));
+        passTextInput.sendKeys(USER_PASSWORD);
+        WebElement loginButton = driver.findElement(By.xpath(".//button[@name='_submit']"));
+        loginButton.click();
 
     }
 

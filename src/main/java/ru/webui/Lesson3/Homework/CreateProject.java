@@ -7,12 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 public class CreateProject {
     private static WebDriver driver;
@@ -29,15 +26,10 @@ public class CreateProject {
         options.addArguments("--disable-popup-blocking");
         driver = new ChromeDriver(options);
 
-        driver.get(LOGIN_PAGE);
         driver.manage().window().maximize();//разворачиваем окно
+        driver.get(LOGIN_PAGE);
+        login();
 
-        WebElement loginTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput\"]"));
-        loginTextInput.sendKeys(USER_LOGIN);
-        WebElement passTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput2\"]"));
-        passTextInput.sendKeys(USER_PASSWORD);
-        WebElement loginButton = driver.findElement(By.xpath(".//button[@name='_submit']"));
-        loginButton.click();
         driver.get("https://crm.geekbrains.space/project/my");
 
         WebElement createProject = driver.findElement(By.xpath(".//a[@title=\"Создать проект\"]"));
@@ -89,9 +81,13 @@ public class CreateProject {
 
         driver.quit();//закрываем браузер
 
-
-
-
-
+    }
+    private static void login(){
+        WebElement loginTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput\"]"));
+        loginTextInput.sendKeys(USER_LOGIN);
+        WebElement passTextInput = driver.findElement(By.xpath(".//input[@id=\"prependedInput2\"]"));
+        passTextInput.sendKeys(USER_PASSWORD);
+        WebElement loginButton = driver.findElement(By.xpath(".//button[@name='_submit']"));
+        loginButton.click();
     }
 }
