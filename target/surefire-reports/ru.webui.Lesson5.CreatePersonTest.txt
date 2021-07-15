@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ru.webui.Lesson5.CreatePersonTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.817 s - in ru.webui.Lesson5.CreatePersonTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.718 s - in ru.webui.Lesson5.CreatePersonTest

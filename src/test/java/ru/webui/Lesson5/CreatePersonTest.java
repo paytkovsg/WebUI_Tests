@@ -34,12 +34,12 @@ public class CreatePersonTest {
         setUpDriverSession();
         login();
     }
-    @AfterAll
-    public static void tearDown() {
-        if(driver !=null){
-            driver.quit();
-        }
-    }
+//    @AfterAll
+//    public static void tearDown() {
+//        if(driver !=null){
+//            driver.quit();
+//        }
+//    }
 
     @Test
     @DisplayName("Проверка успешного входа")

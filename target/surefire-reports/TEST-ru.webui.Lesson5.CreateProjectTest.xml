@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ru.webui.Lesson5.CreatePersonTest" time="17.718" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ru.webui.Lesson5.CreateProjectTest" time="24.438" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -62,20 +62,20 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="loginСheck" classname="ru.webui.Lesson5.CreatePersonTest" time="0.294">
-    <system-out><![CDATA[18:04:59.080 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache - Resolution chrome=91 in cache (valid until 18:56:35 14/07/2021 YEKT)
-18:04:59.081 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache - Resolution chrome91=91.0.4472.101 in cache (valid until 00:01:04 15/07/2021 YEKT)
-18:04:59.081 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 91.0.4472.101 (resolved driver for Chrome 91)
-18:04:59.085 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager - Driver chromedriver 91.0.4472.101 found in cache
-18:04:59.086 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\paytk\.cache\selenium\chromedriver\win32\91.0.4472.101\chromedriver.exe
+  <testcase name="loginСheck" classname="ru.webui.Lesson5.CreateProjectTest" time="0.275">
+    <system-out><![CDATA[18:05:16.803 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache - Resolution chrome=91 in cache (valid until 18:56:35 14/07/2021 YEKT)
+18:05:16.804 [main] DEBUG io.github.bonigarcia.wdm.cache.ResolutionCache - Resolution chrome91=91.0.4472.101 in cache (valid until 00:01:04 15/07/2021 YEKT)
+18:05:16.805 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 91.0.4472.101 (resolved driver for Chrome 91)
+18:05:16.809 [main] DEBUG io.github.bonigarcia.wdm.WebDriverManager - Driver chromedriver 91.0.4472.101 found in cache
+18:05:16.810 [main] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\paytk\.cache\selenium\chromedriver\win32\91.0.4472.101\chromedriver.exe
 ]]></system-out>
-    <system-err><![CDATA[Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 27124
+    <system-err><![CDATA[Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 40439
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-июл 14, 2021 6:05:00 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+июл 14, 2021 6:05:17 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
   </testcase>
-  <testcase name="CheckCreateAContact" classname="ru.webui.Lesson5.CreatePersonTest" time="10.056"/>
+  <testcase name="createProject" classname="ru.webui.Lesson5.CreateProjectTest" time="17.135"/>
 </testsuite>
