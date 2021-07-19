@@ -1,3 +1,7 @@
-ru\webui\Lesson5\CreateExpenseClaimTest.class
-ru\webui\Lesson5\CreatePersonTest.class
-ru\webui\Lesson5\CreateProjectTest.class
+ru\webui\Lesson6\Features\Expencec\NewExpensesTest.class
+ru\webui\Lesson6\Features\Login\LoginTest.class
+ru\webui\Lesson6\Features\Navigation\NavigationTest.class
+ru\webui\Lesson6\Features\Project\NewProjectTest.class
+ru\webui\Lesson6\Features\Person\NewPersonTest.class
+ru\webui\Lesson6\Confiq\Configuration.class
+ru\webui\Lesson6\Base\BaseTest.class

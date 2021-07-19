@@ -1,8 +1,10 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import ru.webui.Lesson6.Homework.Base.BaseView;
 
@@ -14,10 +16,10 @@ public class NewProjectPage extends BaseView {
     @FindBy(xpath = ".//a[@class='select2-choice select2-default']")
     private WebElement orgChoice;
 
-    @FindBy(xpath = ".//div[@id='select2-drop']/div/input")
+    @FindBy(xpath = "//input[contains(@class, 'select2-input')]")
     private WebElement orgSearch;
 
-    @FindBy(xpath = "//div[@class='select2-result-label']/span")
+    @FindBy(xpath = "//div[@class='select2-result-label']")
     private WebElement orgResultSearch;
 
     @FindBy(xpath = ".//div[@class='select2-container select2']/a")
@@ -55,31 +57,24 @@ public class NewProjectPage extends BaseView {
         projectName.sendKeys(nameProject);
         return this;
     }
-    public NewProjectPage clickOrgChoice(){
+    public NewProjectPage inputOrgChoice(String orgName){
         orgChoice.click();
+        wait10.until(ExpectedConditions.visibilityOf(orgSearch));
+        orgSearch.sendKeys(orgName);
+        wait10.until(ExpectedConditions.visibilityOf(orgResultSearch));
+        orgSearch.sendKeys(Keys.ENTER);
         return this;
-    }
-    public NewProjectPage enterOrgSearch (String ornName){
-        orgSearch.sendKeys(ornName);
-        return this;
-    }
-    public NewProjectPage pushEnterOrgResultSearch (){
-        orgResultSearch.click();
-        return new NewProjectPage(driver);
     }
 
-    public NewProjectPage clickContactPerson(){
+    public NewProjectPage clickContactPerson(String namePerson){
         contactPerson.click();
-        return this;
-    }
-    public NewProjectPage enterContactPerson (String namePerson){
+        wait10.until(ExpectedConditions.visibilityOf(contactPersonSearch));
         contactPersonSearch.sendKeys(namePerson);
+        wait10.until(ExpectedConditions.visibilityOf(resultSearchContact));
+        contactPersonSearch.sendKeys(Keys.ENTER);
         return this;
     }
-    public NewProjectPage pushEnterContactPersonSearch(){
-        resultSearchContact.click();
-        return new NewProjectPage(driver);
-    }
+
     public NewProjectPage selectBusinessUnit(int value){
         Select businessUnitDropDown = new Select(unitSelection);
         businessUnitDropDown.selectByValue(String.valueOf(value));

@@ -1,0 +1,30 @@
+# Created at 2021-07-19T22:10:20.891
+��� 19, 2021 10:10:20 PM org.junit.platform.launcher.core.LauncherConfigurationParameters loadClasspathResource
+
+# Created at 2021-07-19T22:10:20.891
+INFO: Loading JUnit Platform configuration parameters from classpath resource [file:/C:/Users/paytk/Documents/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/%D0%9E%D0%91%D0%A3%D0%A7%D0%95%D0%9D%D0%98%D0%95%20GB/%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20Web%20UI%20%D0%BD%D0%B0%20Java/WebUI_Tests/target/test-classes/junit-platform.properties].
+
+# Created at 2021-07-19T22:10:24.846
+��� 19, 2021 10:10:24 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+
+# Created at 2021-07-19T22:10:24.848
+INFO: Detected dialect: W3C
+
+# Created at 2021-07-19T22:10:36.142
+��� 19, 2021 10:10:36 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+
+# Created at 2021-07-19T22:10:36.143
+INFO: Detected dialect: W3C
+
+# Created at 2021-07-19T22:10:46.599
+��� 19, 2021 10:10:46 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+
+# Created at 2021-07-19T22:10:46.599
+INFO: Detected dialect: W3C
+
+# Created at 2021-07-19T22:10:56.377
+��� 19, 2021 10:10:56 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+
+# Created at 2021-07-19T22:10:56.378
+INFO: Detected dialect: W3C
+

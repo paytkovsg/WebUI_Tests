@@ -1,5 +1,6 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,8 @@ public class AllMyProjectPage extends BaseView {
         super(driver);
     }
     public NewProjectPage clickOnCreateProject(){
+        wait10.until(ExpectedConditions.visibilityOf(buttonCrProject));
+        Assertions.assertTrue(buttonCrProject.isDisplayed());
         buttonCrProject.click();
         return new NewProjectPage(driver);
 

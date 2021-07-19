@@ -1,5 +1,8 @@
 package ru.webui.Lesson6.Features.Project;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 import ru.webui.Lesson6.Base.BaseTest;
 import ru.webui.Lesson6.Confiq.Configuration;
@@ -10,6 +13,8 @@ import ru.webui.Lesson6.Homework.enums.NavigationBarTabs;
 
 import java.util.UUID;
 
+@Feature("CreateNewProject")
+@Severity(SeverityLevel.CRITICAL)
 public class NewProjectTest extends BaseTest {
     @Test
     public void createNewProjectTest(){
@@ -22,12 +27,8 @@ public class NewProjectTest extends BaseTest {
         projectScreen
                 .clickOnCreateProject()
                 .enterName("Проект: "+ UUID.randomUUID().toString())
-                .clickOrgChoice()
-                .enterOrgSearch("1234")
-                .pushEnterOrgResultSearch()
-                .clickContactPerson()
-                .enterContactPerson("Пятков Сергей")
-                .pushEnterContactPersonSearch()
+                .inputOrgChoice("1234")
+                .clickContactPerson("Пятков Сергей")
                 .selectBusinessUnit(1)
                 .selectCurator("Юзеров Юзер")
                 .selectProjectManager("Юзеров Юзер")

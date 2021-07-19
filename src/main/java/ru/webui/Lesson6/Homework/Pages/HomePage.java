@@ -1,6 +1,8 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.webui.Lesson6.Homework.Base.BaseView;
 import ru.webui.Lesson6.Homework.views.NavigationBar;
 
@@ -15,8 +17,11 @@ public class HomePage extends BaseView {
         this.navigationBar = new NavigationBar(driver);
     }
 
-    public void checkUrl(String url) {
+    @Step(value = "Assert that current url equals {url}")
+    public HomePage checkUrl(String url) {
+        wait10.until(ExpectedConditions.urlToBe(url));
         assertEquals(driver.getCurrentUrl(), url);
+        return this;
     }
 
     public NavigationBar getPageNavigation() {

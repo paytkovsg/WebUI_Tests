@@ -1,5 +1,6 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +20,8 @@ public class AllExpensesPage extends BaseView {
     }
 
     public NewExpensePage clickOnCreateNewExpenseButton() {
+        wait10.until(ExpectedConditions.visibilityOf(createNewExpenseButton));
+        Assertions.assertTrue(createNewExpenseButton.isDisplayed());
         createNewExpenseButton.click();
         return new NewExpensePage(driver);
     }
