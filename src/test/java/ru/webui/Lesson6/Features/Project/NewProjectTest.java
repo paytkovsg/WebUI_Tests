@@ -1,5 +1,6 @@
 package ru.webui.Lesson6.Features.Project;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @Severity(SeverityLevel.CRITICAL)
 public class NewProjectTest extends BaseTest {
     @Test
+    @Description("Проверка создания нового проекта")
     public void createNewProjectTest(){
         AllMyProjectPage projectScreen = (AllMyProjectPage) new LoginPage(driver)
                 .authoriseScenario(Configuration.STUDENT_LOGIN, Configuration.STUDENT_PASSWORD)
@@ -26,13 +28,8 @@ public class NewProjectTest extends BaseTest {
 
         projectScreen
                 .clickOnCreateProject()
-                .enterName("Проект: "+ UUID.randomUUID().toString())
-                .inputOrgChoice("1234")
-                .clickContactPerson("Пятков Сергей")
-                .selectBusinessUnit(1)
-                .selectCurator("Юзеров Юзер")
-                .selectProjectManager("Юзеров Юзер")
-                .selectManager("Юзеров Юзер")
+                .fillFieldsInput("Проект: "+ UUID.randomUUID().toString(), "1234", "Пятков Сергей",
+                        1, "Юзеров Юзер", "Юзеров Юзер", "Юзеров Юзер")
                 .saveNewProject()
                 .checkNewProjectPopUp();
 

@@ -1,5 +1,6 @@
 package ru.webui.Lesson6.Features.Expencec;
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import ru.webui.Lesson6.Confiq.Configuration;
 import ru.webui.Lesson6.Homework.enums.ExpenseSubMenuButtons;
@@ -8,6 +9,7 @@ import ru.webui.Lesson6.Homework.Pages.AllExpensesPage;
 import ru.webui.Lesson6.Homework.Pages.LoginPage;
 import ru.webui.Lesson6.Base.BaseTest;
 
+@Feature("Создание расхода")
 public class NewExpensesTest extends BaseTest {
 
     private static final int EXPENSE_SUM = 10000;

@@ -1,5 +1,6 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ public class AllMyProjectPage extends BaseView {
     public AllMyProjectPage(WebDriver driver) {
         super(driver);
     }
+    @Step(value = "Проверка наличия кнопки Создать проект")
     public NewProjectPage clickOnCreateProject(){
         wait10.until(ExpectedConditions.visibilityOf(buttonCrProject));
         Assertions.assertTrue(buttonCrProject.isDisplayed());
@@ -25,6 +27,7 @@ public class AllMyProjectPage extends BaseView {
         return new NewProjectPage(driver);
 
     }
+    @Step(value = "Проверка всплывающего уведомления")
     public AllMyProjectPage checkNewProjectPopUp() {
         String message = wait10.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
                 "div[class='message']"))).getText();

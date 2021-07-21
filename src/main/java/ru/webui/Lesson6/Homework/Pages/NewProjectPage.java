@@ -1,5 +1,6 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ public class NewProjectPage extends BaseView {
     @FindBy(xpath = ".//input[@data-ftid='crm_project_name']")
     private WebElement projectName;
 
-    @FindBy(xpath = ".//a[@class='select2-choice select2-default']")
+    @FindBy(xpath = ".//span[@class='select2-arrow']")
     private WebElement orgChoice;
 
     @FindBy(xpath = "//input[contains(@class, 'select2-input')]")
@@ -57,7 +58,7 @@ public class NewProjectPage extends BaseView {
         projectName.sendKeys(nameProject);
         return this;
     }
-    public NewProjectPage inputOrgChoice(String orgName){
+     public NewProjectPage inputOrgChoice(String orgName){
         orgChoice.click();
         wait10.until(ExpectedConditions.visibilityOf(orgSearch));
         orgSearch.sendKeys(orgName);
@@ -80,24 +81,38 @@ public class NewProjectPage extends BaseView {
         businessUnitDropDown.selectByValue(String.valueOf(value));
         return this;
     }
-    public NewProjectPage selectCurator(String value){
+     public NewProjectPage selectCurator(String valueC){
         Select projectCuratorDropDown = new Select(projectCurator);
-        projectCuratorDropDown.selectByVisibleText(value);
+        projectCuratorDropDown.selectByVisibleText(valueC);
         return this;
     }
-    public NewProjectPage selectProjectManager(String value){
+    public NewProjectPage selectProjectManager(String valuePM){
         Select projectManagerDropDown = new Select(projectManager);
-        projectManagerDropDown.selectByVisibleText(value);
+        projectManagerDropDown.selectByVisibleText(valuePM);
         return this;
     }
-    public NewProjectPage selectManager(String value){
+    public NewProjectPage selectManager(String valueM){
         Select managerDropDown = new Select(manager);
-        managerDropDown.selectByVisibleText(value);
+        managerDropDown.selectByVisibleText(valueM);
         return this;
     }
+    @Step(value = "Нажать на кнопку «Сохранить и закрыть»")
     public AllMyProjectPage saveNewProject(){
         saveProject.click();
         return new AllMyProjectPage(driver);
     }
+
+    @Step(value = "Заполнение полей")
+    public NewProjectPage fillFieldsInput (String nameProject, String orgName, String namePerson, int value, String valueC,
+                                           String valuePM, String valueM) {
+        enterName(nameProject);
+        inputOrgChoice(orgName);
+        clickContactPerson(namePerson);
+        selectBusinessUnit(value);
+        selectCurator(valueC);
+        selectProjectManager(valuePM);
+        selectManager(valueM);
+        return this;
+     }
 
 }

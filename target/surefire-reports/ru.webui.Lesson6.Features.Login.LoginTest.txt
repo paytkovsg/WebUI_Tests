@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: ru.webui.Lesson6.Features.Login.LoginTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.292 s - in ru.webui.Lesson6.Features.Login.LoginTest
