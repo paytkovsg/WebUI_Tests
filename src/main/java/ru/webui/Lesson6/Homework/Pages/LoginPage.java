@@ -26,13 +26,13 @@ public class LoginPage extends BaseView {
         inputLogin.sendKeys(login);
         return this;
     }
-    @Step(value = "Enter password {password}")
+    @Step(value = "Ввести пароль {password}")
     public LoginPage enterPassword (String password){
         inputPassword.sendKeys(password);
         return this;
     }
 
-    @Step(value = "Click login button")
+    @Step(value = "Нажать кнопку входа")
     public HomePage clickButton (){
         loginButton.click();
         return new HomePage(driver);

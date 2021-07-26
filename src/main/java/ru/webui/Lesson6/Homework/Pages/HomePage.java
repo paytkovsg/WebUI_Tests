@@ -17,7 +17,7 @@ public class HomePage extends BaseView {
         this.navigationBar = new NavigationBar(driver);
     }
 
-    @Step(value = "Assert that current url equals {url}")
+    @Step(value = "Пользователь перешел на страницу:  {url}")
     public HomePage checkUrl(String url) {
         wait10.until(ExpectedConditions.urlToBe(url));
         assertEquals(driver.getCurrentUrl(), url);

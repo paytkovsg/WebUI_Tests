@@ -1,5 +1,6 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ public class AllContactsPage extends BaseView {
         super(driver);
     }
 
+    @Step(value = "Проверка наличия кнопки Создания контактного лица")
     public NewContactPage clickOnCreateContact(){
         wait10.until(ExpectedConditions.visibilityOf(buttonCrPerson));
         Assertions.assertTrue(buttonCrPerson.isDisplayed());
@@ -26,6 +28,7 @@ public class AllContactsPage extends BaseView {
         return new NewContactPage(driver);
 
     }
+    @Step(value = "Проверка всплывающего уведомления")
     public AllContactsPage checkNewContactPopUp() {
         String message = wait10.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(
                 "div[class='message']"))).getText();

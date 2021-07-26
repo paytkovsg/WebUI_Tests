@@ -24,12 +24,7 @@ public class NewPersonTest extends BaseTest {
 
         contactsScreen
                 .clickOnCreateContact()
-                .enterFirstName("Пятков")
-                .enterName("Сергей")
-                .clickOrgChoice()
-                .enterOrgSearch("1234")
-                .pushEnterOrgResultSearch()
-                .enterPosition("Tester")
+                .fillFieldsCreateContact("Пятков", "Сергей", "1234", "Tester" )
                 .saveNewContact()
                 .checkNewContactPopUp();
 

@@ -1,9 +1,14 @@
 package ru.webui.Lesson6.Homework.Pages;
 
+import io.qameta.allure.Step;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.webui.Lesson6.Homework.Base.BaseView;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class NewContactPage extends BaseView {
 
@@ -37,36 +42,41 @@ public class NewContactPage extends BaseView {
 
     public NewContactPage enterFirstName(String firstName){
         firstNameInput.sendKeys(firstName);
+        assertFalse(firstNameInput.getAttribute("value").isEmpty());
         return this;
     }
     public NewContactPage enterName (String name){
         nameInput.sendKeys(name);
+        assertFalse(nameInput.getAttribute("value").isEmpty());
         return this;
     }
 
     public NewContactPage enterPosition(String positionName){
         position.sendKeys(positionName);
+        assertFalse(position.getAttribute("value").isEmpty());
         return this;
     }
 
-    public NewContactPage clickOrgChoice(){
+    public NewContactPage inputOrgChoice(String orgName){
         orgChoice.click();
-        return this;
-    }
-
-    public NewContactPage enterOrgSearch(String orgName){
+        wait10.until(ExpectedConditions.visibilityOf(orgSearch));
         orgSearch.sendKeys(orgName);
+        wait10.until(ExpectedConditions.visibilityOf(orgResultSearch));
+        orgSearch.sendKeys(Keys.ENTER);
         return this;
-    }
-
-    public NewContactPage pushEnterOrgResultSearch(){
-        orgResultSearch.click();
-        return new NewContactPage(driver);
     }
 
     public AllContactsPage saveNewContact(){
         saveButton.click();
         return new AllContactsPage(driver);
+    }
+    @Step(value = "Заполнение полей")
+    public NewContactPage fillFieldsCreateContact (String firstName, String name, String orgName, String positionName){
+        enterFirstName(firstName);
+        enterName(name);
+        inputOrgChoice(orgName);
+        enterPosition(positionName);
+        return this;
     }
 
 
